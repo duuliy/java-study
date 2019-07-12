@@ -3,7 +3,6 @@ package test;
 public class varNumChartArr {
     public static void main(String[] args) {
         int x=12345/60;//int计算结果直接舍去小数
-        System.out.println("Hello, world!");
         System.out.println(x);
         float f1 = 3.14f;
         System.out.println(f1);
@@ -30,7 +29,6 @@ public class varNumChartArr {
         double d = 1.2 + 24.0 / n; // 6.0
         System.out.println(d);
 
-
         //需要特别注意，在一个复杂的四则运算中，两个整数的运算不会出现自动提升的情况。例如：
         // 24 / 5这个子表达式时，按两个整数进行运算，结果仍为整数4
         double dd = 1.2 + 24 / 5; // 5.2
@@ -47,6 +45,47 @@ public class varNumChartArr {
 
         //如果要进行四舍五入，可以对浮点数加上0.5再强制转型：
         int m = (int) (n1 + 0.5);
+
+
+
+        //字符类型
+        char c1 = 'A';// 包含1个字符
+        //字符串类型
+        String s1 = "ABC"; // 包含3个字符
+        //字符串连接
+        String s2 = "TAB";
+        System.out.println(s1+s2);   //ABCTAB
+
+        //字符串不可变
+        String str1 = "hello";  //JVM虚拟机先创建字符串"hello"，然后，把字符串变量str1指向它
+        str1 = "world"; //VM虚拟机先创建字符串"world"，然后，把字符串变量把字符串变量str1指向它：
+        //原来的字符串"hello"还在，只是我们无法通过变量s访问它而已。
+        System.out.println(s); // 显示 world
+
+
+        //空值null 引用类型的变量可以指向一个空值null，它表示不存在，即该变量不指向任何对象。
+        String str2 = null; // str2是null
+
+
+
+
+        //数组类型
+        int[] ns = new int[5];
+        ns[0] = 68;
+        ns[1] = 79;
+        ns[2] = 91;
+        ns[3] = 85;
+        ns[4] = 62;
+//        或者
+        int[] ns2 = new int[] { 68, 79, 91, 85, 62 };
+        int[] ns3 = { 68, 79, 91, 85, 62 };
+//        ns.length 长度
+
+        String[] names = {"ABC", "XYZ", "zoo"};
+        String str3 = names[1];
+        names[1] = "cat";
+        System.out.println(str3); // "XYZ"  同js引用数据类型，改变的是数据的新建的引用，而原位置及引用依然存在。
+
     }
 }
 
@@ -61,6 +100,8 @@ public class varNumChartArr {
  * 布尔类型:boolean
  * var不同js 是定义类型的
  *
+ * 非基本数据类型:
+ * 字符串类型:string(双引号)
  * */
 
 
@@ -97,4 +138,9 @@ public class varNumChartArr {
  * 浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数。
  * 很显然，无论使用float还是double，都只能存储一个0.1的近似值。
  * 因此，浮点数运算会产生误差：！！！
+ */
+
+/**
+ * //布尔值，三目运算等同js
+ *
  */
