@@ -43,4 +43,6 @@ public class processControl {
 /**
  * if else if和javascript一样
  * 要判断引用类型的变量内容是否相等，必须使用equals()方法：
+ *
+ * switch,for,while,do while,break和continue同js
  * */
