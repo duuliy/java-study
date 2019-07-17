@@ -16,6 +16,41 @@ public class processControl {
         String s1 = "hello";
         String s2 = "HELLO".toLowerCase();
         System.out.println(s1.equals(s2));
+
+
+        int[] ns2 = { 1, 155, 210, 3, 5, 8 };
+        Arrays.sort(ns2);
+        System.out.println(Arrays.toString(ns2));
+
+        int[] ns = { 28, 12, 89, 73, 65, 18, 96, 50, 8, 36 };
+        int g=0;
+        int max=ns.length-1;
+        for(int i=0;i<max;i++){  //冒泡
+            for(int j=0;j<max-i;j++){
+                g++;
+                if (ns[j] > ns[j+1]) {
+                    int tmp=ns[j];
+                    ns[j]=ns[j+1];
+                    ns[j+1]=tmp;
+                }
+            }
+        }
+        System.out.println(g);
+        System.out.println(Arrays.toString(ns));
+
+        int[][] nns = { //二维数组  3.4.5...维同理
+                { 1, 2, 3, 4 },
+                { 5, 6, 7, 8 },
+                { 9, 10, 11, 12 }
+        };
+
+        for (int[] arr : nns) {
+            for (int n : arr) {
+                System.out.print(n);
+                System.out.print(',');
+            }
+            System.out.println();
+        }
     }
 }
 
@@ -45,4 +80,10 @@ public class processControl {
  * 要判断引用类型的变量内容是否相等，必须使用equals()方法：
  *
  * switch,for,while,do while,break和continue同js
+ * */
+
+/**
+ * 数组看例子
+ *
+ *
  * */
