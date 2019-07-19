@@ -69,7 +69,7 @@ public class varNumChartArr {
 
 
 
-        //数组类型
+        //类型
         int[] ns = new int[5];
         ns[0] = 68;
         ns[1] = 79;
@@ -80,6 +80,8 @@ public class varNumChartArr {
         int[] ns2 = new int[] { 68, 79, 91, 85, 62 };
         int[] ns3 = { 68, 79, 91, 85, 62 };
 //        ns.length 长度
+        //一旦数组完成初始化，数组在内存中所占的空间将被固定下来，所以数组的长度将不可改变。
+        int[] price = new int[4];
 
         String[] names = {"ABC", "XYZ", "zoo"};
         String str3 = names[1];
