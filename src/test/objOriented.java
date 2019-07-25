@@ -1,6 +1,8 @@
 package test;
 
 import java.util.Arrays;
+import test2.yinruTest;
+import test2.test2child.test2;
 
 public class objOriented {
 
@@ -30,6 +32,10 @@ public class objOriented {
         Student stu=new Student();
         System.out.println(stu.hello());
         System.out.println(stu instanceof Student);
+
+        yinruTest yinruTest1=new yinruTest();
+        System.out.println(yinruTest1.somebody2(1,2));
+        test2.somebody9();
     }
 }
 
@@ -121,6 +127,7 @@ class Student2 extends Person2 {
 }
 
 interface PersonY {
+    public static final int MALE = 1;
     default void run() {
         System.out.println(getName() + " run");
     }
@@ -262,4 +269,42 @@ class StudentY implements PersonY,PersonX {
  * 简而言之 是有了default才能重写
  *
  * 因为interface没有字段，default方法无法访问字段，而抽象类的普通方法可以访问实例字段。
+ * 因为interface是一个纯抽象类，所以它不能定义实例字段。但是，interface是可以有静态字段的，并且静态字段必须为final类型：
+ * 如果不写，编译器会自动把该字段变为public static final类型。
+ * */
+
+
+/**
+ * 静态字段和方法
+ * 实例字段在每个实例中都有自己的一个独立“空间”，但是静态字段只有一个共享“空间”，所有实例都会共享该字段。
+ *
+ * 因此，不推荐用实例变量.静态字段去访问静态字段，因为在Java程序中，实例对象并没有静态字段。在代码中，实例对象能访问静态字段只是因为编译器可以根据实例类型自动转换为类名.静态字段来访问静态对象。
+ * 在es6 中实例对象直接不能访问 构造类的static
+ *
+ * 区别：调用实例方法必须通过一个实例变量，而调用静态方法则不需要实例变量，通过类名就可以调用。
+ *
+ * */
+
+
+/**
+ * 包
+ * Java定义了一种名字空间，称之为包：package
+ * 像js的文件module
+ *
+ * 包没有父子关系。java.util和java.util.zip是不同的包，两者没有任何继承关系。
+ * 没有定义包名的class，它使用的是默认包，非常容易引起名字冲突，因此，不推荐不写包名的做法。
+ *
+ * !!!即所有Java文件对应的目录层次要和包的层次一致。
+ *
+ * 在写import的时候，可以使用*，表示把这个包下面的所有class都导入进来（但不包括子包的class）
+ * 还有一种import static的语法，它可以导入可以导入一个类的静态字段和静态方法
+ *
+ * 如果有两个class名称相同，例如，mr.jun.Arrays和java.util.Arrays，那么只能import其中一个，另一个必须写完整类名。
+ * 推荐的做法是使用倒置的域名来确保唯一性.
+ *
+ * */
+
+/**
+ * 作用域
+ * 就是几个声明方法如public
  * */
