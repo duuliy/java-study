@@ -109,6 +109,65 @@ class Student extends Person {
 }
 
 
+abstract class Person2 {
+    public abstract void run();
+}
+
+class Student2 extends Person2 {
+    @Override
+    public void run() {
+        System.out.println("Student.run");
+    }
+}
+
+interface PersonY {
+    default void run() {
+        System.out.println(getName() + " run");
+    }
+    String getName();
+
+    default void sayHi(){
+        System.out.println("hiY run");
+    }
+}
+
+interface PersonX {
+    default void run() {
+        System.out.println(getName() + " run");
+    }
+    String getName();
+
+    default void sayHi(){
+        System.out.println("hiX run");
+    }
+}
+
+class StudentY implements PersonY,PersonX {
+    private String name;
+
+    public StudentY(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void sayHi(){
+        PersonY.super.sayHi();
+    }
+
+    @Override
+    public void run() {
+        System.out.println(this.name + " run");
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+}
+
+
+
+
 
 
 
@@ -169,4 +228,38 @@ class Student extends Person {
  *
  *
  *
+ * */
+
+/**
+ * 抽象类：
+ * 把一个方法声明为abstract，表示它是一个抽象方法，本身没有实现任何方法语句。因为这个抽象方法本身是无法执行的，所以，Person类也无法被实例化。编译器会告诉我们，无法编译Person类，因为它包含抽象方法。
+ * 必须把Person类本身也声明为abstract，才能正确编译它
+ *
+ * 感觉没什么用，但是：
+ * 因为抽象类本身被设计成只能用于被继承，因此，抽象类可以强迫子类实现其定义的抽象方法，否则编译会报错。因此，抽象方法实际上相当于定义了“规范”。
+ *
+ * 面向抽象编程的本质就是：
+ *
+ * 上层代码只定义规范（例如：abstract class Person）；
+ * 不需要子类就可以实现业务逻辑（正常编译）;
+ * 具体的业务逻辑由不同的子类实现，调用者并不关心。
+ *
+ * 就跟抽象类的使用没得啥区别
+ *
+ * */
+
+
+/**
+ * 接口 interface:
+ * 跟ts差不多
+ * 只能写方法，不能写字段
+ *
+ * 类继承接口:implements,可继承多个
+ * 接口继承接口:extends
+ *
+ * default方法的目的是，当我们需要给接口新增一个方法时，
+ * 会涉及到修改全部子类。如果新增的是default方法，那么子类就不必全部修改，只需要在需要覆写的地方去覆写新增方法。
+ * 简而言之 是有了default才能重写
+ *
+ * 因为interface没有字段，default方法无法访问字段，而抽象类的普通方法可以访问实例字段。
  * */
