@@ -179,6 +179,8 @@ class StudentY implements PersonY,PersonX {
 
 
 
+
+
 /**
  * 对顶层的类是object,他是没有父级的，相当于js原型链最顶端。
  * 面向对象 class和new大致同js 两个instance拥有class定义的name和age字段，且各自都有一份独立的数据，互不干扰。
@@ -307,4 +309,43 @@ class StudentY implements PersonY,PersonX {
 /**
  * 作用域
  * 就是几个声明方法如public
+ * */
+
+/**
+ * classpath和jar
+ * classpath是JVM用到的一个环境变量，它用来指示JVM如何搜索class。
+ * 因为Java是编译型语言，源码文件是.java，而编译后的.class文件才是真正可以被JVM执行的字节码。
+ * eg:
+ * window:
+ * C:\work\project1\bin;C:\shared;"D:\My Documents\project1\bin"
+ *
+ * linux:
+ * /usr/shared:/usr/local/bin:/home/liaoxuefeng/bin
+ *
+ * 更好的做法是，不要设置classpath！默认的当前目录.对于绝大多数情况都够用了。
+ *
+ * rt.jar是java的核心库
+ *
+ * jar包(zip格式的压缩文件):
+ * ar包就是用来干这个事的，它可以把package组织的目录层级，以及各个目录下的所有文件（包括.class文件和其他文件）都打成一个jar文件
+ *
+ * jar包还可以包含一个特殊的/META-INF/MANIFEST.MF文件，MANIFEST.MF是纯文本，可以指定Main-Class和其它信息。JVM会自动读取这个MANIFEST.MF文件
+ *
+ * 在大型项目中，不可能手动编写MANIFEST.MF文件，再手动创建zip包。Java社区提供了大量的开源构建工具，例如Maven，可以非常方便地创建jar包。
+ *
+ * */
+
+
+/**
+ * 模块
+ * 一般来说命令行:
+ * java -cp app.jar:a.jar:b.jar:c.jar com.liaoxuefeng.sample.Main
+ *
+ * 只有java.base模块不依赖任何模块，它可以被看作是“根模块”，好比所有的类都是从Object直接或间接继承而来
+ *
+ * module是关键字，后面的hello.world是模块的名称，它的命名规范与包一致。花括号的requires xxx;表示这个模块需要引用的其他模块名。
+ * 任何模块都会自动引入java.base
+ *
+ * 要分发我们自己的Java应用程序，只需要把这个jre目录打个包给对方发过去，对方直接运行上述命令即可，既不用下载安装JDK，也不用知道如何配置我们自己的模块，极大地方便了分发和部署。
+ *
  * */
