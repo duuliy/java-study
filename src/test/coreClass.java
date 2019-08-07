@@ -92,3 +92,8 @@ public class coreClass {
  * 转换编码就是将String和byte[]转换，需要指定编码；
  * 转换为byte[]时，始终优先考虑UTF-8编码。
  * */
+
+/**
+ * JavaBean
+ * JavaBean主要用来传递数据，即把一组数据组合成一个JavaBean便于传输。此外，JavaBean可以方便地被IDE工具分析，生成读写属性的代码，主要用在图形界面的可视化设计中。
+ * */
