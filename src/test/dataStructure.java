@@ -3,6 +3,8 @@ package test;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import static java.util.Arrays.asList;
+
 public class dataStructure {
     public static void main(String[] args) {
 
@@ -20,6 +22,8 @@ public class dataStructure {
             Object value = map.get(obj );
             System.out.println(value);
         }
+        //想一次性加很多智能循环
+
 
         //        set的一般用法:
         Set set=new HashSet();
@@ -32,7 +36,22 @@ public class dataStructure {
         System.out.println(set);
         System.out.println(set.size());//打印集合中对象的数目 为 2。
 
+        //想一次性加很多智能循环
+
+
         //list
+
+        List list =new ArrayList();
+        list.add("duuliy");
+        System.out.println(list);
+        List<String> strings = new ArrayList(asList("foo", "bar", "baz"));
+        System.out.println(strings);
+
+        List<String> strings1 = new Vector(asList("foo", "bar2", "baz"));
+        System.out.println(strings1);
+
+        List<String> strings2 = new LinkedList(asList("foo", "bar3", "baz"));
+        System.out.println(strings2);
 
     }
 }

@@ -3,7 +3,7 @@ import java.util.StringJoiner;
 
 public class stringTest {
     public static void main(String[] args) {
-        String s = "";
+        String s = "1";
         for (int i = 0; i < 10; i++) {
             s = s + "," + i;
         }
