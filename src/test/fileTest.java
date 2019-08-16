@@ -1,7 +1,7 @@
 package test;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
 
 public class fileTest {
     public static void main(String[] args) throws IOException {
@@ -16,12 +16,31 @@ public class fileTest {
 
 //        String absolution=file.getAbsolutePath(); //绝对路径
 //        File file=new File("hello.txt"); //相对路径
-        String path=file.getPath(); //相对路径
-        System.out.println(path);
+//        String path=file.getPath(); //相对路径
+//        System.out.println(path);
+
+        Reader reader=null;
+//        File file1=new File("Reader.java");
+        Writer writer=null;  //写
+
+//        reader=new FileReader(file);  //读  拷贝
+
+        char[] cs=new char[1024];
+        int len =-1;
+//        while((len=reader.read(cs))!=-1){
+//            System.out.println(new String(cs,0,len));
+//        }
+
+        //编码
+        String str="duuliy";
+        byte[] bytes=str.getBytes("UTF-8");
+        System.out.println(Arrays.toString(bytes));
+        String s=new String(bytes,"UTf-8");
+        System.out.println(s);
 
     }
 
-    public static void parseFile(File file){
+    public static void parseFile(File file){  //递归获取
         if(file==null|file.exists()){
             return;
         }
@@ -58,4 +77,52 @@ public class fileTest {
  * isFile()  是否是一个文件
  * isDirectory() 是否是一个目录
  * isAbsolute() 是否是绝对路径
+ * */
+
+
+/**
+ * 文件拷贝
+ *
+ * */
+
+/**
+ * 字符操作（文本）：
+ *
+ * BufferReader  读
+ * BufferWriter  写
+ * 然后装入文件
+ *
+ * 扩展使用，查
+ *
+ * 字节流（二进制）：
+ * InputStream:输入流 常用子类FileInputStream 读
+ * OutputStream:输出流 常用子类FileOutputStream 写
+ * 然后装入文件
+ *
+ * 字符和字节转换
+ * OutputStreamWriter 字符流转换成字节流
+ * InputStreamReader 字节流转换成字符流
+ *
+ * */
+
+/**
+ * 打印流：
+ * printWriter() 括号里面加System.out  打印到控制台
+ * println()
+ * */
+
+/**
+ * 序列化(把对象以流的形式存续在硬盘或者数据库中):
+ * 继承Serializable 才能序列化
+ * 输出ObjectOutputStream  写入OutputStream
+ * 输入ObjectInputStream  ObjectOutputStream反序列化
+ * 多个对象序列化需要放在队列中
+ *
+ * */
+
+/**
+ * 字符串编码与解码
+ * getBytes 编码
+ * new String(bytes,"UTf-8") 解码
+ *
  * */
