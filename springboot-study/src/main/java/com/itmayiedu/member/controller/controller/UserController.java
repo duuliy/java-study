@@ -5,6 +5,7 @@ import com.itmayiedu.member.controller.bean.UserBean;
 import com.itmayiedu.member.controller.response.UserResponse;
 import com.itmayiedu.member.controller.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,6 +57,7 @@ public class UserController {
         return userService.findUserByNames(reqn.getName());
     }
 
+    @Transactional
     @RequestMapping(value = "/findUserByName",method = RequestMethod.GET)
     public List<UserBean> findUserByName(@RequestParam("name") String name) {
         System.out.println(name);
@@ -133,5 +135,17 @@ public class UserController {
  * @RequestBody 接收post参数
  * @RequestParam 接收get参数
  *
+ * @Transactional 异常捕获
+ * 如果出现异常 则报错行不会往下执行，不得加进数据库
+ * 也可以指定某个数据库
+ *
+ *
+ * */
+
+
+/**
+ * 多数据库怎么区分:
+ * 也可以用bean
+ * @Datasource(ref="配置文件里面数据库名字")
  *
  * */

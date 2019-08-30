@@ -6,12 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 //启动代码抽离处理
 //@EnableAutoConfiguration
 //@ComponentScan(basePackages = {"com.itmayiedu.member.controller", "com.itmayiedu.member.controller.controller"})
 @SpringBootApplication
 @MapperScan(basePackages = {"com.itmayiedu.member.controller"})
+@EnableAsync
 public class App {
 
 
@@ -37,4 +39,6 @@ public class App {
  *
  *
  * @MapperScan 全局注入Mapper 相当于依赖注入连接池
+ *
+ * @EnableAsync 开启异步调用 提高扫包性能
  * */
