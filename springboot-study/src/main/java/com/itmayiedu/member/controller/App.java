@@ -42,3 +42,34 @@ public class App {
  *
  * @EnableAsync 开启异步调用 提高扫包性能
  * */
+
+
+/**
+ * swagger:
+ * tags	String[]	控制器标签。
+ * description	String	控制器描述（该字段被申明为过期）。
+ *
+ *
+ * @ApiOperation: 可设置对接口的描述:
+ * value	String	接口说明。
+ * notes	String	接口发布说明。
+ * tags	Stirng[]	标签。
+ * response	Class<?>	接口返回类型。
+ * httpMethod	String	接口请求方式。
+ *
+ * @ApiIgnore: Swagger 文档不会显示拥有该注解的接口。
+ * @ApiImplicitParams: 用于描述接口的非对象参数集。
+ * @ApiImplicitParam: 用于描述接口的非对象参数，一般与 @ApiImplicitParams 组合使用。
+ *
+ * @ApiModel: 可设置接口相关实体的描述。
+ * @ApiModelProperty: 可设置实体属性的相关描述:
+ * value	String	字段说明。
+ * name	String	重写字段名称。
+ * dataType	Stirng	重写字段类型。
+ * required	boolean	是否必填。
+ * example	Stirng	举例说明。
+ * hidden	boolean	是否在文档中隐藏该字段。
+ * allowEmptyValue	boolean	是否允许为空。
+ * allowableValues	String	该字段允许的值，当我们 API 的某个参数为枚举类型时，使用这个属性就可以清楚地告诉 API 使用者该参数所能允许传入的值。
+ *
+ * */

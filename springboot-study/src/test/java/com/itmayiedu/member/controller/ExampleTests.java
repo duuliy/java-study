@@ -53,6 +53,7 @@ public class ExampleTests {
  * @SpringBootTest  单元测试用
  *
  *
- *  Assert.assertSame  是否等于某值
+ *  Assert.assertSame  是否等于某值白色坏死组织
+ *
  *
  * */
