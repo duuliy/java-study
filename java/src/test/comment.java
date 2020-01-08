@@ -55,7 +55,7 @@ public class comment {
  * 方法：ElementType.METHOD；
  * 构造方法：ElementType.CONSTRUCTOR；
  * 方法参数：ElementType.PARAMETER。
- * 加上[] 就是数组的写法。
+ * 加上[] 就是数组的写法。Inherited
  *
  *
  * @Retention  只有这个会影响代码逻辑
