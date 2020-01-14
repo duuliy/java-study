@@ -50,7 +50,7 @@ public class UserController {
         }
     }
     //    @RequestBody
-    //    @RequestParam
+    //    @RequestParam name
     @RequestMapping(value = "/findUserByNames",method = RequestMethod.POST)
     public List<UserBean> findUserByNames(@RequestBody reqN reqn) {
         System.out.println(reqn.getName());
