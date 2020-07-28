@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Arrays;
+
 public class varNumChartArr {
     public static void main(String[] args) {
         int x=12345/60;//int计算结果直接舍去小数
@@ -39,7 +41,7 @@ public class varNumChartArr {
         double d3 = -1.0 / 0; // -Infinity
 
         int n1 = (int) 12.3; // 12
-        int n2 = (int) -12.7; // 12
+        int n2 = (int) -12.7; // -12
         int n3 = (int) (12.7 + 0.5); // 13
         int n4 = (int) 1.2e20; // 2147483647
 
@@ -86,7 +88,8 @@ public class varNumChartArr {
         String[] names = {"ABC", "XYZ", "zoo"};
         String str3 = names[1];
         names[1] = "cat";
-        System.out.println(str3); // "XYZ"  同js引用数据类型，改变的是数据的新建的引用，而原位置及引用依然存在。
+        System.out.println(Arrays.toString(names)); //同js引用数据类型
+        System.out.println(str3); // "XYZ"  同js基本类型，改变的是数据的新建的引用，而原位置及引用依然存在。
 
     }
 }
