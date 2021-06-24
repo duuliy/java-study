@@ -2,6 +2,7 @@ package com.itmayiedu.member.controller.response;
 
 
 /**
+ * 相当于继承bean  但是改变bean的数据结构
  * class Dao{
  *     private Student student;
  *
@@ -64,3 +65,4 @@ public class UserResponse {
         this.height = height;
     }
 }
+
